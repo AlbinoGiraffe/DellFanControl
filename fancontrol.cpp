@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     envFile.open(".env");
     if (envFile.fail())
     {
-        throw ".env file could not be opened!";
+        throw std::runtime_error("Could not open .env file!");
     }
     string line;
     while (getline(envFile, line))
