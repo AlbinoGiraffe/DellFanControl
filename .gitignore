@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+fancontrol
 
 # Env files
 *.env
