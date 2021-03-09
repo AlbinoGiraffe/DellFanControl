@@ -112,8 +112,7 @@ int main(int argc, char **argv)
                 // wait for NetworkManager to start again
                 restarting = 3;
                 fp = popen("ping -c 2 8.8.8.8 || systemctl restart NetworkManager", "r");
-                cout << "checking internet: \n"
-                     << to_string(get_temp(fp));
+                cout << "checking internet:" << to_string(get_temp(fp)) << "\n";
             }
         }
         sleep(3);
