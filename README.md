@@ -1,4 +1,4 @@
-# iDracFanControl
+# DellFanControl
 
 Controls Dell Server fan speeds over IPMI. Tested on a Dell R420.
 
