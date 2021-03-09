@@ -6,6 +6,7 @@ char fspeed[8];
 
 int main(int argc, char **argv)
 {
+    printf("DELL iDRAC FAN CONTROL\n");
     int cpu0_temp, cpu1_temp, avg_temp, speedarg;
     int restarting = 0;
 
@@ -23,7 +24,7 @@ int main(int argc, char **argv)
     string line;
     while (getline(envFile, line))
     {
-        cout << line << "<\n";
+        cout << line << "\n";
         if (line.length() == 0)
         {
             continue;
@@ -46,7 +47,6 @@ int main(int argc, char **argv)
     }
     envFile.close();
 
-    printf("DELL iDRAC FAN CONTROL\n");
     if (argc == 2)
     {
         speedarg = atoi(argv[1]);
@@ -112,7 +112,8 @@ int main(int argc, char **argv)
                 // wait for NetworkManager to start again
                 restarting = 3;
                 fp = popen("ping -c 2 8.8.8.8 || systemctl restart NetworkManager", "r");
-                cout << "checking internet: " << to_string(get_temp(fp));
+                cout << "checking internet: \n"
+                     << to_string(get_temp(fp));
             }
         }
         sleep(3);
