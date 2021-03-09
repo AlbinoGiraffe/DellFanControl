@@ -15,7 +15,10 @@ int main(int argc, char **argv)
     FILE *fp;
     ifstream envFile;
     envFile.open("./.env");
-
+    if (envFile.bad())
+    {
+        throw ".env file could not be opened!";
+    }
     string line;
     while (getline(envFile, line))
     {
