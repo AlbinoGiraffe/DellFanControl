@@ -14,8 +14,8 @@ int main(int argc, char **argv)
     // populate credentials from .env
     FILE *fp;
     ifstream envFile;
-    envFile.open("./.env");
-    if (envFile.bad())
+    envFile.open(".env");
+    if (envFile.fail())
     {
         throw ".env file could not be opened!";
     }
